@@ -84,6 +84,7 @@ export class AIService {
       } catch (directParseError) {
         console.log(
           "Direct parse failed, trying extraction methods...",
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           directParseError.message,
         );
       }
@@ -105,6 +106,7 @@ export class AIService {
             console.log("Trying to parse:", cleaned);
             return JSON.parse(cleaned);
           } catch (parseError) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
             console.log("Parse attempt failed:", parseError.message);
             continue;
           }
